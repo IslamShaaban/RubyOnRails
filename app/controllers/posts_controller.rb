@@ -1,28 +1,27 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
-  # GET /posts or /posts.json
+  #Get All Posts
   def index
     @posts = Post.all
   end
 
-  # GET /posts/1 or /posts/1.json
+  #Get Post Info
   def show
   end
 
-  # GET /posts/new
+  #Create New Post
   def new
     @post = Post.new
   end
 
-  # GET /posts/1/edit
+  #Edit Post
   def edit
   end
 
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: "Post was successfully created." }

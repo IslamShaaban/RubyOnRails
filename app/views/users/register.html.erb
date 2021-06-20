@@ -1,0 +1,26 @@
+<% content_for :title, "Register" %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger text-center" role="alert">
+        <h2><%= pluralize(@user.errors.count, "Error") %></h2>
+        <ul class="text-center">
+          <% @user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+<div class="border-form-div text-center container">
+  <h2 class="text-dark font-weight-bold rounded mb-4 p-1">Sign up</h2>
+  <%= form_for(:user, url: registeration_path, method: 'POST', class: 'form-group') do |f| %>
+    <%= f.text_field :username, :autofocus => true, :placeholder => 'Full Name', class: 'form-control mb-2' %>
+    <%= f.email_field :email, :placeholder => 'Email address', class: 'form-control mb-2' %>
+    <%= f.password_field :password, :placeholder => 'Password', class: 'form-control mb-2' %>
+    <%= f.password_field :password_confirmation, :placeholder => 'Password confirmation', class: 'form-control mb-2' %>
+    <hr>
+    <%= f.submit "Sign up",:class=>'btn btn-outline-primary mb-2' %>
+  <% end %>
+  <div class="text-center">
+    Already have account?
+    <%= link_to "Sign in", login_path %>
+  </div>
+</div>
