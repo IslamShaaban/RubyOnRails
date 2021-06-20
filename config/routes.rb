@@ -19,19 +19,4 @@ Rails.  application.routes.draw do
     end
   end
   ######################################################
-
-  ####################### Users Routes #####################
-  get 'register', to: 'users#register', as: 'register'
-  post 'register', to: 'users#create', as: 'registeration'
-  get 'login', to: 'users#login', as: 'login'
-  post 'login', to: 'users#check', as: 'new_session'
-  ##########################################################
-  
-  ###################### Posts and Comments Routes ########################
-  resources :posts do
-    resources :comments
-  end
-  #########################################################################
-
-  match 'path', :to => 'errors#routing', :via => [:get, :post, :put, :delete, :patch, :head, :options]
 end

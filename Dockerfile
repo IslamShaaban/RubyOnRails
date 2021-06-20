@@ -22,8 +22,8 @@ RUN bundle install
 # Copy the whole app
 COPY . .
 
-
 # Run Server to Run The Whole Application
 EXPOSE  3000
-#MD rm -f tmp/pids/server.pid && rails s -b '0.0.0.0'
+
+# Run Some Command to Configure Database and Sidekiq
 ENTRYPOINT ["sh", "./config/docker/startup.sh"]

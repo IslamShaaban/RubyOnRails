@@ -5,10 +5,10 @@ class Api::V1::PostsController < Api::V1::ApplicationController
     # Get All Posts of Users
     def index
       @posts = Post.all
-      @postsData = @posts.to_json(:include => [:user => {:only => [:name]},:tags => {:only => [:tags]}, :comments => {:only => [:comment]}])
       if @posts.blank?
         render json: {message: "Posts List is Empty"}, status: :not_found
       else
+        @postsData = @posts.to_json(:include => [:user => {:only => [:name]}, :tags => {:only => [:tags]}, :comments => {:only => [:body]}])
         render :json => {posts: JSON.parse(@postsData)}, :status => 200
       end
     end
@@ -16,10 +16,10 @@ class Api::V1::PostsController < Api::V1::ApplicationController
     # Get Specified Post
     def show
       @post = Post.where(id: params[:id]).first
-      @postData = @post.to_json(:include => [:user => {:only => [:name]},:tags => {:only => [:tags]}, :comments => {:only => [:comment]}])
       if @post.blank?
         render json: {message: "Post Not Found"}, :status => 404
       else
+        @postData = @post.to_json(:include => [:user => {:only => [:name]}, :tags => {:only => [:tags]}, :comments => {:only => [:body]}])
         render :json => { post: JSON.parse(@postData) }, :status => 200
       end
     end
@@ -83,7 +83,7 @@ class Api::V1::PostsController < Api::V1::ApplicationController
           render json: {error: "Sorry, You Don't Have Permission to Delete This Post"}, status: :unauthorized
         end
       else
-        render json: {message: "Post Not Found"}, status: :ok
+        render json: {message: "Post Not Found"}, status: :not_found
       end
     end
 
