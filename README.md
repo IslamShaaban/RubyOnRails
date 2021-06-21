@@ -20,5 +20,5 @@ This Repository is about Development of RESTful API Endpoint for Blog Applicatio
 
 - This is Link is An Documentation for API Endpoint Please Check it out:
     ```sh
-        https://documenter.getpostman.com/view/14216315TzeZDkuY#b8fabbec-4624-42c8-92cf-7c33933e8793
+        https://documenter.getpostman.com/view/14216315/TzeZDkuY#b8fabbec-4624-42c8-92cf-7c33933e8793
     ```
