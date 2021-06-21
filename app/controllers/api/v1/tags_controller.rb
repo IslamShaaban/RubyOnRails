@@ -18,7 +18,7 @@ class Api::V1::TagsController < Api::V1::ApplicationController
         if @tags.blank?
             render json: {message: "Post Not Found"}, status: :not_found           
         else
-            @post = Post.where(post_id: params[:post_id])
+            @post = Post.where(id: params[:post_id]).first
             if @post.user_id == current_user.id
                 params[:q].split(',').each do |tag|
                     @tag = Tag.where(tags: tag, post_id: params[:post_id]).first
