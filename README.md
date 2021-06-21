@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+​		                            **WELCOME TO WebOpsBlog Task**
 
-Things you may want to cover:
+This Repository is about Development of RESTful API Endpoint for Blog Application Developed Totally By Ruby on Rails
 
-* Ruby version
+**to Try This Repo Please do these steps below :**
 
-* System dependencies
+- Clone the Repository 
 
-* Configuration
+- Run Docker Compose to create Container with full feature of this Repo
+    **docker compose up**
 
-* Database creation
+- Start Test the API Endpoint through Your Local Host on Port 3000
+    **localhost:3000/api/v1**
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- This is Link is An Documentation for API Endpoint Please Check it out:
+    **https://documenter.getpostman.com/view/14216315TzeZDkuY#b8fabbec-4624-42c8-92cf-7c33933e8793**

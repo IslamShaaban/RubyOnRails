@@ -16,8 +16,8 @@ class Api::V1::TagsController < Api::V1::ApplicationController
     def update
         params[:q].split(',').each do |tag|
             @tag = Tag.where(tags: tag, post_id: params[:post_id]).first
-            @tag.destroy
+            @tag.update(tags: tag)
         end
-        render json: {message: "Tags Deleted Successfully"}, status: :ok
+        render json: {message: "Tags Updated Successfully"}, status: :ok
     end
 end

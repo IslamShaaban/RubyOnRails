@@ -3,8 +3,11 @@
 #Get Docker Image of Ruby
 FROM ruby:2.7.3
 
+
+ENV DEBIAN_FRONTEND noninteractive
+
 # install rails dependencies
-RUN apt-get clean all && apt-get update -qq && apt-get install -y build-essential libpq-dev \
+RUN apt-get clean all && apt-get update -qq && apt-get install -y build-essential libpq-dev && apt-get install -y apt-utils\
     curl gnupg2 apt-utils default-libmysqlclient-dev git libcurl3-dev cmake \
     libssl-dev pkg-config openssl imagemagick file nodejs yarn
 
@@ -17,7 +20,12 @@ COPY Gemfile Gemfile.lock ./
 
 
 # Run bundle install to install gems inside the gemfile
+RUN gem install bundler:2.2.17
 RUN bundle install
+
+# Assets, to fix missing secret key issue during building
+RUN SECRET_KEY_BASE=dumb bundle exec rails assets:precompile
+
 
 # Copy the whole app
 COPY . .
