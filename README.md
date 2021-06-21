@@ -9,10 +9,16 @@ This Repository is about Development of RESTful API Endpoint for Blog Applicatio
 - Clone the Repository 
 
 - Run Docker Compose to create Container with full feature of this Repo
-    **docker compose up**
+    ```sh
+        docker compose up
+    ```
 
 - Start Test the API Endpoint through Your Local Host on Port 3000
-    **localhost:3000/api/v1**
+    ```sh
+        localhost:3000/api/v1
+    ```
 
 - This is Link is An Documentation for API Endpoint Please Check it out:
-    **https://documenter.getpostman.com/view/14216315TzeZDkuY#b8fabbec-4624-42c8-92cf-7c33933e8793**
+    ```sh
+        https://documenter.getpostman.com/view/14216315TzeZDkuY#b8fabbec-4624-42c8-92cf-7c33933e8793
+    ```
