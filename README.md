@@ -1,6 +1,6 @@
 # README
 
-​		                            **WELCOME TO WebOpsBlog Task**
+​		                            **WELCOME TO Rails API Blog**
 
 This Repository is about Development of RESTful API Endpoint for Blog Application Developed Totally By Ruby on Rails
 
